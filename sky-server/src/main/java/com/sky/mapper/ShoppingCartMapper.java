@@ -12,7 +12,7 @@ import java.util.List;
 public interface ShoppingCartMapper {
     /**
      * 查询购物车
-     * @param shoppingCartMapper
+     * @param shoppingCart
      * @return
      */
     List<ShoppingCart> list(ShoppingCart shoppingCart);
@@ -38,4 +38,11 @@ public interface ShoppingCartMapper {
      */
     @Delete("delete from shopping_cart where user_id = #{userId}")
     void deleteByUserId(Long userId);
+
+    /**
+     * 根据id删除购物车数据
+     * @param id
+     */
+    @Delete("delete from shopping_cart where id = #{id}")
+    void deleteById(Long id);
 }
